@@ -65,82 +65,19 @@ double p = new Random().NextDouble()*(max-min)+min*/
 [1, 7] -> такого числа в массиве нет*/
 
 
-// using System;
-// using static System.Console;
-
-
-// Write("Введите номер строки ");
-// int rows = int.Parse(ReadLine());
-
-// Write("Введите номер столбца ");
-// int columns = int.Parse(ReadLine());
-
-// Clear();
-// PrintArray (GetArray(5, 5, 0, 10), rows, columns);
-
-
-// int [,] GetArray(int m, int n, int min, int max)
-// {
-//     int [,] result = new int [m, n];
-//     for (int i = 0; i < m; i++)
-//     {
-//         for (int j = 0; j < n; j++)
-//         {
-//             result[i, j] = new Random().Next(min, max+1);
-//         }
-
-//     }
-//     return result;
-// }
-
-
-// void PrintArray(int[,] array, int x, int y)
-// {
-//     for (int i = 0; i < array.GetLength(0); i++)
-//     {
-//         for (int j = 0; j < array.GetLength(1); j++)
-//         {
-//             Write($"{array[i, j]} ");
-//         }
-//         WriteLine();
-//     } 
-    
-    
-//     WriteLine();
-//     if (x<array.GetLength(0) && y<array.GetLength(1))
-//     WriteLine($"{array[x, y]} ");
-//     else WriteLine("Такого числа нет");
-// }
-
-      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- /*Задача 52. Задайте двумерный массив из целых чисел.
- Найдите среднее арифметическое элементов в каждом столбце.
-Например, задан массив:
-1 4 7 2
-5 9 2 3
-8 4 2 4
-Среднее арифметическое каждого столбца: 4,6; 5,6; 3,6; 3.*/
-
-
 using System;
 using static System.Console;
 
+
+Write("Введите номер строки ");
+int rows = int.Parse(ReadLine());
+
+Write("Введите номер столбца ");
+int columns = int.Parse(ReadLine());
+
 Clear();
-PrintArray (GetArray(5, 5, 0, 10));
+PrintArray (GetArray(5, 5, 0, 10), rows, columns);
+
 
 int [,] GetArray(int m, int n, int min, int max)
 {
@@ -157,7 +94,7 @@ int [,] GetArray(int m, int n, int min, int max)
 }
 
 
-void PrintArray(int[,] array)
+void PrintArray(int[,] array, int x, int y)
 {
     for (int i = 0; i < array.GetLength(0); i++)
     {
@@ -167,40 +104,27 @@ void PrintArray(int[,] array)
         }
         WriteLine();
     } 
-
-
-    int k=0;
-    int m=1;
-    int size = array.GetLength(1);
-        int [] sum = new int [size];
-        int [] summ = new int [size];
-     for (int i = 0; i < array.GetLength(0); i++)
-    {   
-        for (int j = 0; j < array.GetLength(1); j++)
-        {   Write($"{array[i, j]} "); 
-            sum [k] = array[i,j]; 
-            k++;
-            
-        }
-        summ[m]*=sum[k];
-        WriteLine();
-    } 
-    Write($"{sum[k]} "); 
-    Write($"{summ[m]} "); 
+    
+    
+    WriteLine();
+    if (x<array.GetLength(0) && y<array.GetLength(1))
+    WriteLine($"{array[x, y]} ");
+    else WriteLine("Такого числа нет");
 }
 
-// Write($"{array[i, j]} "); 
-
-// int a = array[i, j+1]*array[i, j+1];
+      
 
 
-// int GetSumDiag(int[,] array)
-// {
-//     int length = array.GetLength(0) < array.GetLength(1) ? array.GetLength(0) : array.GetLength(1);
-//     int sum = 0;
-//     for (int i = 0; i < length; i++)
-//     {
-//         sum *= array[i, i];
-//     }
-//     return sum;
-// }
+
+
+
+
+
+
+
+
+
+
+
+
+ 
